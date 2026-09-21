@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Occupants · Wellness Home Guardian
+  </title>
+
+
+  <!-- ===================== FONTS ===================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- ===================== CSS ===================== -->
+
+  <link
+    rel="stylesheet"
+    href="../../css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/occupants.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+  <!-- =========================================================
+       SIDEBAR
+  ========================================================== -->
+
+  <aside
+    class="sidebar"
+    id="sidebar"
+  >
+
+
+    <!-- ===================== BRAND ===================== -->
+
+    <div class="brand">
+
+      <div
+        class="brand-logo"
+        data-icon="shield"
+      ></div>
+
+      <div class="brand-name">
+
+        Wellness Home<br>
+        Guardian
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================== NAVIGATION ===================== -->
+
+    <nav class="nav">
+
+
+      <!-- ================= OVERVIEW ================= -->
+
+      <div class="nav-label">
+        Overview
+      </div>
+
+
+      <a
+        class="nav-item"
+        href="../dashboard.html"
+      >
+
+        <span
+          data-icon="dashboard"
+        ></span>
+
+        Dashboard
+
+      </a>
+
+
+      <!-- ================= HOME MANAGEMENT ================= -->
+
+      <div class="nav-label">
+        Home Management
+      </div>
+
+
+      <!-- HOME REGISTRY -->
+
+      <a
+        class="nav-item"
+        href="home-registry.html"
+      >
+
+        <span
+          data-icon="home"
+        ></span>
+
+        Home Registry
+
+      </a>
+
+
+      <!-- OCCUPANTS -->
+
+      <a
+        class="nav-item active"
+        href="occupants.html"
+      >
+
+        <span
+          data-icon="users"
+        ></span>
+
+        Occupants
+
+      </a>
+
+
+      <!-- ROOMS -->
+
+      <a
+        class="nav-item"
+        href="rooms.html"
+      >
+
+        <span
+          data-icon="rooms"
+        ></span>
+
+        Rooms
+
+      </a>
+
+
+      <!-- ================= ENVIRONMENT ================= -->
+
+      <div class="nav-label">
+        Environment
+      </div>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="Sensors"
+      >
+
+        <span
+          data-icon="sensor"
+        ></span>
+
+        Sensors
+
+      </a>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="Time-Series Data"
+      >
+
+        <span
+          data-icon="chart"
+        ></span>
+
+        Time-Series Data
+
+      </a>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="Indoor Air Quality"
+      >
+
+        <span
+          data-icon="wind"
+        ></span>
+
+        Indoor Air Quality
+
+      </a>
+
+
+      <!-- ================= AI INTELLIGENCE ================= -->
+
+      <div class="nav-label">
+        AI Intelligence
+      </div>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="LSTM Anomaly Detection"
+      >
+
+        <span
+          data-icon="brain"
+        ></span>
+
+        LSTM Anomaly Detection
+
+      </a>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="Health Risk Prediction"
+      >
+
+        <span
+          data-icon="pulse"
+        ></span>
+
+        Health Risk Prediction
+
+      </a>
+
+
+      <!-- ================= WELLNESS ================= -->
+
+      <div class="nav-label">
+        Wellness
+      </div>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="Recommendations"
+      >
+
+        <span
+          data-icon="leaf"
+        ></span>
+
+        Recommendations
+
+      </a>
+
+
+      <a
+        class="nav-item"
+        href="#"
+        data-soon="Alerts & Reports"
+      >
+
+        <span
+          data-icon="bell"
+        ></span>
+
+        Alerts &amp; Reports
+
+      </a>
+
+
+    </nav>
+
+
+    <!-- ===================== LIVE SIMULATION ===================== -->
+
+    <div class="sidebar-foot">
+
+      <span>
+        Live Simulation
+      </span>
+
+
+      <label
+        class="switch"
+        aria-label="Live Simulation"
+      >
+
+        <input
+          type="checkbox"
+          id="liveToggle"
+        >
+
+        <span class="track"></span>
+
+        <span class="knob"></span>
+
+      </label>
+
+    </div>
+
+
+  </aside>
+
+
+  <!-- ===================== MOBILE SCRIM ===================== -->
+
+  <div
+    class="scrim"
+    id="scrim"
+  ></div>
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
+
+  <div class="main">
+
+
+    <!-- ===================== TOPBAR ===================== -->
+
+    <header class="topbar">
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+      >
+
+        <span
+          data-icon="menu"
+        ></span>
+
+      </button>
+
+
+      <!-- PAGE TITLE -->
+
+      <div class="top-title">
+
+        <h2>
+          Occupants
+        </h2>
+
+        <p>
+          Residents and their environmental health sensitivity profile
+        </p>
+
+      </div>
+
+
+      <!-- GLOBAL SEARCH -->
+
+      <label class="global-search">
+
+        <span
+          data-icon="search"
+        ></span>
+
+        <input
+          type="text"
+          id="globalSearch"
+          placeholder="Search homes, sensors, occupants…"
+          autocomplete="off"
+        >
+
+      </label>
+
+
+      <!-- ===================== TOP RIGHT ===================== -->
+
+      <div class="top-right">
+
+
+        <!-- DEMO -->
+
+        <span class="demo-badge">
+          Demo Data
+        </span>
+
+
+        <!-- NOTIFICATION -->
+
+        <button
+          class="icon-btn"
+          aria-label="Notifications"
+          id="bellBtn"
+          type="button"
+        >
+
+          <span
+            data-icon="bell"
+          ></span>
+
+          <span class="badge">
+            4
+          </span>
+
+        </button>
+
+
+        <!-- USER -->
+
+        <div class="user-pill">
+
+          <div class="avatar">
+            RA
+          </div>
+
+          <div>
+
+            <strong>
+              Riya Admin
+            </strong>
+
+            <span>
+              Facility Owner
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </header>
+
+
+    <!-- =======================================================
+         CONTENT
+    ======================================================== -->
+
+    <main class="content">
+
+
+      <!-- ===================== PAGE HEAD ===================== -->
+
+      <div class="page-head">
+
+
+        <div>
+
+          <h1>
+            Occupants
+          </h1>
+
+          <p>
+            Resident health-sensitivity profiles used to weight risk predictions
+          </p>
+
+        </div>
+
+
+        <!-- ADD OCCUPANT -->
+
+        <button
+          class="btn-primary"
+          id="addBtn"
+          type="button"
+        >
+
+          <span
+            data-icon="plus"
+          ></span>
+
+          Add Occupant
+
+        </button>
+
+
+      </div>
+
+
+      <!-- ===================== TOOLBAR ===================== -->
+
+      <div class="toolbar">
+
+
+        <!-- TABLE SEARCH -->
+
+        <label class="table-search">
+
+          <span
+            data-icon="search"
+          ></span>
+
+          <input
+            type="text"
+            id="tableSearch"
+            placeholder="Search occupants…"
+            autocomplete="off"
+          >
+
+        </label>
+
+
+        <!-- FILTER CHIPS -->
+
+        <div
+          class="chips"
+          id="chips"
+        >
+
+
+          <button
+            class="chip active"
+            data-filter="All"
+            type="button"
+          >
+            All
+          </button>
+
+
+          <button
+            class="chip"
+            data-filter="Asthma"
+            type="button"
+          >
+            Asthma
+          </button>
+
+
+          <button
+            class="chip"
+            data-filter="Senior Citizen"
+            type="button"
+          >
+            Senior Citizen
+          </button>
+
+
+          <button
+            class="chip"
+            data-filter="Normal"
+            type="button"
+          >
+            Normal
+          </button>
+
+
+          <button
+            class="chip"
+            data-filter="Allergy Sensitive"
+            type="button"
+          >
+            Allergy Sensitive
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ===================== TABLE ===================== -->
+
+      <div class="table-card">
+
+
+        <div class="table-scroll">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Occupant ID
+                </th>
+
+                <th>
+                  Name
+                </th>
+
+                <th>
+                  Age
+                </th>
+
+                <th>
+                  Gender
+                </th>
+
+                <th>
+                  Health Category
+                </th>
+
+                <th>
+                  Home
+                </th>
+
+                <th>
+                  Status
+                </th>
+
+                <th></th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody id="tbody">
+
+              <!-- JS renders occupant rows -->
+
+            </tbody>
+
+
+          </table>
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+          class="empty"
+          id="empty"
+          hidden
+        >
+
+          <strong>
+            No occupants found
+          </strong>
+
+          <span>
+            Try a different search or filter,
+            or add a new occupant.
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+    </main>
+
+
+  </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     ADD / EDIT MODAL
+========================================================== -->
+
+<div
+  class="overlay"
+  id="formOverlay"
+>
+
+
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="formTitle"
+  >
+
+
+    <h3 id="formTitle">
+      Add Occupant
+    </h3>
+
+
+    <p class="sub">
+
+      Health category sets how strongly
+      air-quality readings affect this person's
+      risk score.
+
+    </p>
+
+
+    <!-- NAME -->
+
+    <div
+      class="field"
+      id="fName"
+    >
+
+      <label for="inName">
+        Full name
+      </label>
+
+      <input
+        id="inName"
+        type="text"
+        placeholder="e.g. Sarah Patel"
+      >
+
+      <div class="err">
+        Enter the occupant's name.
+      </div>
+
+    </div>
+
+
+    <!-- AGE + GENDER -->
+
+    <div class="row-2">
+
+
+      <div
+        class="field"
+        id="fAge"
+      >
+
+        <label for="inAge">
+          Age
+        </label>
+
+        <input
+          id="inAge"
+          type="number"
+          min="0"
+          max="120"
+          placeholder="34"
+        >
+
+        <div class="err">
+          Enter an age from 0 to 120.
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="inGender">
+          Gender
+        </label>
+
+        <select id="inGender">
+
+          <option>
+            Female
+          </option>
+
+          <option>
+            Male
+          </option>
+
+          <option>
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- HEALTH CATEGORY -->
+
+    <div class="field">
+
+      <label for="inCat">
+        Health category
+      </label>
+
+      <select id="inCat">
+
+        <option>
+          Asthma
+        </option>
+
+        <option>
+          Senior Citizen
+        </option>
+
+        <option>
+          Normal
+        </option>
+
+        <option>
+          Allergy Sensitive
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <!-- HOME + STATUS -->
+
+    <div class="row-2">
+
+
+      <div class="field">
+
+        <label for="inHome">
+          Home
+        </label>
+
+        <select id="inHome">
+
+          <option>
+            Green Residency
+          </option>
+
+          <option>
+            Wellness Villa
+          </option>
+
+          <option>
+            Smart Habitat
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="inStatus">
+          Status
+        </label>
+
+        <select id="inStatus">
+
+          <option>
+            Active
+          </option>
+
+          <option>
+            Inactive
+          </option>
+
+        </select>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- MODAL ACTIONS -->
+
+    <div class="modal-actions">
+
+
+      <button
+        class="btn-ghost"
+        id="cancelForm"
+        type="button"
+      >
+
+        Cancel
+
+      </button>
+
+
+      <button
+        class="btn-primary"
+        id="saveForm"
+        type="button"
+      >
+
+        Save occupant
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     DELETE MODAL
+========================================================== -->
+
+<div
+  class="overlay"
+  id="delOverlay"
+>
+
+
+  <div
+    class="modal"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="delTitle"
+  >
+
+
+    <h3 id="delTitle">
+      Delete occupant?
+    </h3>
+
+
+    <p
+      class="sub"
+      id="delText"
+    ></p>
+
+
+    <div class="modal-actions">
+
+
+      <button
+        class="btn-ghost"
+        id="cancelDel"
+        type="button"
+      >
+
+        Keep occupant
+
+      </button>
+
+
+      <button
+        class="btn-danger"
+        id="confirmDel"
+        type="button"
+      >
+
+        Delete occupant
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================== -->
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+></div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+  src="../../js/global.js"
+></script>
+
+
+<script
+  src="../../js/home/occupants.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Registry | Wellness Home Guardian</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/home-registry.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L4 6v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10V6l-8-4z" fill="#04140f"/>
+                    <path d="M9 12l2 2 4-4" stroke="#2ee6b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <div class="brand-name">
+                Wellness Home<br>
+                Guardian
+            </div>
+        </div>
+
+        <nav class="nav-scroll">
+
+            <div class="nav-group">
+                <div class="nav-group-label">Overview</div>
+
+                <a href="../dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="9" rx="1.5"/>
+                            <rect x="14" y="3" width="7" height="5" rx="1.5"/>
+                            <rect x="14" y="12" width="7" height="9" rx="1.5"/>
+                            <rect x="3" y="16" width="7" height="5" rx="1.5"/>
+                        </svg>
+                    </span>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-label">Home Management</div>
+
+                <a href="home-registry.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 11.5L12 4l9 7.5"/>
+                            <path d="M5 10v10h14V10"/>
+                        </svg>
+                    </span>
+                    <span>Home Registry</span>
+                </a>
+
+                <a href="occupants.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="8" r="3.2"/>
+                            <path d="M2.5 20c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2"/>
+                        </svg>
+                    </span>
+                    <span>Occupants</span>
+                </a>
+
+                <a href="rooms.html" class="nav-item">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="1.5"/>
+                            <path d="M3 10h18M9 20v-6"/>
+                        </svg>
+                    </span>
+                    <span>Rooms</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-label">Environment</div>
+
+                <a href="#" class="nav-item"><span class="nav-icon">◉</span><span>Sensors</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">⌁</span><span>Time-Series Data</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">≋</span><span>Indoor Air Quality</span></a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-label">AI Intelligence</div>
+
+                <a href="#" class="nav-item"><span class="nav-icon">◈</span><span>LSTM Anomaly Detection</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">⌁</span><span>Health Risk Prediction</span></a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-label">Wellness</div>
+
+                <a href="#" class="nav-item"><span class="nav-icon">♡</span><span>Wellness Scores</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">✦</span><span>Recommendations</span></a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-label">Operations</div>
+
+                <a href="#" class="nav-item"><span class="nav-icon">♧</span><span>Alerts</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">⚒</span><span>Maintenance</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">ϟ</span><span>Energy Monitoring</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">◷</span><span>Audit Trail</span></a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-label">Analytics</div>
+
+                <a href="#" class="nav-item"><span class="nav-icon">◔</span><span>Analytics</span></a>
+                <a href="#" class="nav-item"><span class="nav-icon">♧</span><span>SDG Impact</span></a>
+            </div>
+
+        </nav>
+
+        <div class="sidebar-foot">
+            <div class="sim-toggle-row">
+                <span>Live Simulation</span>
+                <div class="switch">
+                    <div class="knob"></div>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="page-heading">
+                <h1>Home Registry</h1>
+                <p>Manage properties enrolled in the monitoring program</p>
+            </div>
+
+            <div class="search-wrap top-search">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7"/>
+                    <path d="M21 21l-4.3-4.3"/>
+                </svg>
+
+                <input
+                    type="text"
+                    placeholder="Search homes, sensors, occupants..."
+                >
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="demo-badge">
+                    <span class="pulse"></span>
+                    Demo Data
+                </div>
+
+                <button class="icon-btn notification-btn">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.7 21a2 2 0 01-3.4 0"/>
+                    </svg>
+                    <span class="notification-count">4</span>
+                </button>
+
+                <div class="profile-chip">
+                    <div class="avatar">RA</div>
+
+                    <div class="profile-info">
+                        <div class="profile-name">Riya Admin</div>
+                        <div class="profile-role">Facility Owner</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+        <div class="content">
+
+            <div class="view-head">
+
+                <div>
+                    <h2>Home Registry</h2>
+
+                    <div class="section-sub">
+                        <span id="homeCount">3</span>
+                        properties enrolled in the monitoring program
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="createHomeBtn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14"/>
+                        <path d="M5 12h14"/>
+                    </svg>
+                    Create Home
+                </button>
+
+            </div>
+
+
+            <!-- LOCAL SEARCH -->
+            <div class="toolbar">
+
+                <div class="search-wrap local-search">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M21 21l-4.3-4.3"/>
+                    </svg>
+
+                    <input
+                        id="homeSearch"
+                        type="text"
+                        placeholder="Search homes..."
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- HOME CARDS -->
+            <div class="grid g3" id="homesGrid">
+
+
+                <!-- HOME 1 -->
+                <div
+                    class="card home-card"
+                    data-search="green residency home001 baner road pune india riya admin apartment"
+                >
+
+                    <div class="home-card-top">
+
+                        <div class="kpi-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 11.5L12 4l9 7.5"/>
+                                <path d="M5 10v10h14V10"/>
+                            </svg>
+                        </div>
+
+                        <span class="badge badge-info">
+                            Apartment
+                        </span>
+
+                    </div>
+
+
+                    <div class="home-name">
+                        Green Residency
+                    </div>
+
+                    <div class="eyebrow home-id">
+                        HOME001
+                    </div>
+
+
+                    <div class="home-details">
+
+                        <div>
+                            Baner Road, Pune, India
+                        </div>
+
+                        <div>
+                            Owner —
+                            <span>Riya Admin</span>
+                        </div>
+
+                        <div>
+                            Area —
+                            <span>1450 sq.ft</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row-actions">
+
+                        <button class="btn btn-sm view-btn" data-home="Green Residency">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            View
+                        </button>
+
+                        <button class="btn btn-sm edit-btn" data-home="Green Residency">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                            Edit
+                        </button>
+
+                        <button class="btn btn-sm btn-danger delete-btn" data-home="Green Residency">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/>
+                            </svg>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOME 2 -->
+                <div
+                    class="card home-card"
+                    data-search="wellness villa home002 bandra west mumbai india karan mehta villa"
+                >
+
+                    <div class="home-card-top">
+
+                        <div class="kpi-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 11.5L12 4l9 7.5"/>
+                                <path d="M5 10v10h14V10"/>
+                            </svg>
+                        </div>
+
+                        <span class="badge badge-info">
+                            Villa
+                        </span>
+
+                    </div>
+
+
+                    <div class="home-name">
+                        Wellness Villa
+                    </div>
+
+                    <div class="eyebrow home-id">
+                        HOME002
+                    </div>
+
+
+                    <div class="home-details">
+
+                        <div>
+                            Bandra West, Mumbai, India
+                        </div>
+
+                        <div>
+                            Owner —
+                            <span>Karan Mehta</span>
+                        </div>
+
+                        <div>
+                            Area —
+                            <span>3200 sq.ft</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row-actions">
+
+                        <button class="btn btn-sm view-btn" data-home="Wellness Villa">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            View
+                        </button>
+
+                        <button class="btn btn-sm edit-btn" data-home="Wellness Villa">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                            Edit
+                        </button>
+
+                        <button class="btn btn-sm btn-danger delete-btn" data-home="Wellness Villa">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/>
+                            </svg>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOME 3 -->
+                <div
+                    class="card home-card"
+                    data-search="smart habitat home003 hinjewadi phase 2 pune india anita shah office"
+                >
+
+                    <div class="home-card-top">
+
+                        <div class="kpi-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 11.5L12 4l9 7.5"/>
+                                <path d="M5 10v10h14V10"/>
+                            </svg>
+                        </div>
+
+                        <span class="badge badge-info">
+                            Office
+                        </span>
+
+                    </div>
+
+
+                    <div class="home-name">
+                        Smart Habitat
+                    </div>
+
+                    <div class="eyebrow home-id">
+                        HOME003
+                    </div>
+
+
+                    <div class="home-details">
+
+                        <div>
+                            Hinjewadi Phase 2, Pune, India
+                        </div>
+
+                        <div>
+                            Owner —
+                            <span>Anita Shah</span>
+                        </div>
+
+                        <div>
+                            Area —
+                            <span>5100 sq.ft</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row-actions">
+
+                        <button class="btn btn-sm view-btn" data-home="Smart Habitat">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            View
+                        </button>
+
+                        <button class="btn btn-sm edit-btn" data-home="Smart Habitat">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                            Edit
+                        </button>
+
+                        <button class="btn btn-sm btn-danger delete-btn" data-home="Smart Habitat">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/>
+                            </svg>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+    const searchInput = document.getElementById("homeSearch");
+    const cards = [...document.querySelectorAll(".home-card")];
+    const countEl = document.getElementById("homeCount");
+
+    function updateHomeCount() {
+        const visible = cards.filter(card => card.style.display !== "none");
+        countEl.textContent = visible.length;
+    }
+
+    searchInput.addEventListener("input", function () {
+
+        const query = this.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+
+            const searchableText = card.dataset.search.toLowerCase();
+
+            card.style.display =
+                searchableText.includes(query) ? "" : "none";
+
+        });
+
+        updateHomeCount();
+    });
+
+
+    document.getElementById("createHomeBtn").addEventListener("click", function () {
+
+        alert(
+            "Create Home\n\n" +
+            "The home creation form will be connected when the backend is added."
+        );
+
+    });
+
+
+    document.querySelectorAll(".view-btn").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            alert(
+                this.dataset.home +
+                "\n\nHome details will be connected to the backend later."
+            );
+
+        });
+
+    });
+
+
+    document.querySelectorAll(".edit-btn").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            alert(
+                "Edit Home\n\n" +
+                this.dataset.home +
+                "\n\nEdit functionality will be connected to the backend later."
+            );
+
+        });
+
+    });
+
+
+    document.querySelectorAll(".delete-btn").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const homeName = this.dataset.home;
+
+            const confirmed = confirm(
+                "Delete " + homeName + "?"
+            );
+
+            if (!confirmed) {
+                return;
+            }
+
+            const card = this.closest(".home-card");
+
+            card.remove();
+
+            const index = cards.indexOf(card);
+
+            if (index !== -1) {
+                cards.splice(index, 1);
+            }
+
+            updateHomeCount();
+
+        });
+
+    });
+</script>
+
+</body>
+</html>

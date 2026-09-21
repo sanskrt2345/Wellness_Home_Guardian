@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Wellness Home Guardian</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+<div class="app">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L4 6v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10V6l-8-4z" fill="#04140f"/>
+          <path d="M9 12l2 2 4-4" stroke="#2ee6b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Wellness Home<br>Guardian</div>
+      </div>
+    </div>
+
+    <nav class="nav-scroll" id="navScroll"></nav>
+
+    <div class="sidebar-foot">
+      <div class="sim-toggle-row">
+        <span>Live Simulation</span>
+        <div class="switch" id="liveSwitch"><div class="knob"></div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+
+    <header class="topbar">
+      <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+
+      <div class="page-heading">
+        <h1 id="pageTitle">Dashboard</h1>
+        <p id="pageSub">Real-time indoor health intelligence overview</p>
+      </div>
+
+      <div class="search-wrap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4.3-4.3"/>
+        </svg>
+        <input id="globalSearch" type="text" placeholder="Search homes, sensors, occupants...">
+      </div>
+
+      <div class="topbar-right">
+
+        <div class="demo-badge">
+          <span class="pulse"></span>
+          <span>Demo Data</span>
+        </div>
+
+        <div class="rel">
+          <button class="icon-btn notif-btn" id="notifBtn" aria-label="Notifications">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.7 21a2 2 0 01-3.4 0"/>
+            </svg>
+            <span class="count">4</span>
+          </button>
+
+          <div class="dropdown" id="notifDropdown">
+            <div class="dd-head">Notifications</div>
+            <div class="dd-item"><b>CO2 threshold exceeded</b> — Living Room, Green Residency<div class="t">2 minutes ago</div></div>
+            <div class="dd-item"><b>Anomaly detected</b> — LSTM model flagged sensor SEN001<div class="t">18 minutes ago</div></div>
+            <div class="dd-item"><b>Humidity sensor</b> maintenance due — SEN003<div class="t">1 hour ago</div></div>
+            <div class="dd-item"><b>Wellness score</b> improved to 86/100<div class="t">3 hours ago</div></div>
+          </div>
+        </div>
+
+        <div class="rel">
+          <button class="profile-chip" id="profileBtn">
+            <div class="avatar">RA</div>
+            <div>
+              <div class="who">Riya Admin</div>
+              <div class="role">Facility Owner</div>
+            </div>
+          </button>
+
+          <div class="dropdown" id="profileDropdown">
+            <div class="dd-head">Riya Admin · Demo Account</div>
+            <div class="dd-item">Account Settings</div>
+            <div class="dd-item">Notification Preferences</div>
+            <div class="dd-item">Help &amp; Documentation</div>
+            <div class="dd-item" style="color:var(--rose);">Sign Out</div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="content" id="content"></main>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>
