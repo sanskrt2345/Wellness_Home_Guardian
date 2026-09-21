@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050a0e;
+    color: #dce7e7;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --bg: #050a0e;
+    --bg-secondary: #080f14;
+    --card: #0d151c;
+    --card-hover: #111c23;
+
+    --border: #1d2a32;
+    --border-light: #25343c;
+
+    --text: #edf7f6;
+    --text-secondary: #9aabaa;
+    --text-muted: #65777b;
+
+    --primary: #2de0c0;
+    --primary-dark: #0d8f7c;
+
+    --success: #25d9a8;
+    --warning: #e7a73b;
+
+    --radius: 14px;
+    --transition: 0.25s ease;
+}
+
+.container {
+    width: min(1200px, calc(100% - 40px));
+    margin: auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 9px;
+    padding: 11px 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #03100e;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(45, 224, 192, 0.18);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-light);
+    background: #0c141a;
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background: #111c23;
+    border-color: var(--primary-dark);
+}
+
+.btn-large {
+    padding: 14px 24px;
+}
+
+.section {
+    width: min(1200px, calc(100% - 40px));
+    margin: auto;
+    padding: 110px 0;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    color: var(--text);
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 span {
+    color: var(--primary);
+}
+
+.section-heading p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
