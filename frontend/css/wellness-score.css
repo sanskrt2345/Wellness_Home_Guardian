@@ -1,0 +1,8 @@
+/* wellness-score.css — Wellness Score section only */
+.score-hero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.score-hero .ring-wrap{--ring-size:170px;}
+.score-hero .ring-center .num{font-size:34px;}
+.room-score{padding:18px;text-align:center;}
+.room-score .ring-wrap{--ring-size:90px;margin-bottom:10px;}
+.room-score .ring-center .num{font-size:18px;}
+.room-score .eyebrow{text-transform:uppercase;}

@@ -1,0 +1,9 @@
+/* recommendations.css — Recommendations section only */
+/* recommendation card */
+.rec-card{display:flex;gap:14px;padding:18px;}
+.rec-ic{width:42px;height:42px;border-radius:11px;background:rgba(139,123,240,.12);color:var(--violet);display:grid;place-items:center;flex-shrink:0;}
+.rec-card h4{font-size:14.5px;margin-bottom:4px;}
+.rec-card p{font-size:12.5px;color:var(--ink-2);line-height:1.5;margin-bottom:10px;}
+.rec-foot{display:flex;align-items:center;gap:10px;}
+.rec-card.acknowledged{border-color:rgba(52,211,153,.35);}
+.rec-card.acknowledged .rec-ic{background:rgba(52,211,153,.12);color:var(--emerald);}

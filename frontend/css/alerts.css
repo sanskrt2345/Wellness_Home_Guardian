@@ -1,0 +1,61 @@
+/* alerts.css — Alerts section only (table, filters, add/delete modals) */
+/* tables */
+.table-scroll{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;min-width:640px;}
+thead th{
+  text-align:left;font-size:10.5px;letter-spacing:.06em;color:var(--ink-3);
+  font-weight:700;padding:0 14px 12px;border-bottom:1px solid rgba(255,255,255,0.07);
+  cursor:pointer;user-select:none;white-space:nowrap;
+}
+thead th:hover{color:var(--ink-1);}
+tbody td{padding:13px 14px;font-size:13px;color:var(--ink-1);border-bottom:1px solid rgba(255,255,255,0.045);white-space:nowrap;}
+tbody tr{transition:background .15s var(--ease);}
+tbody tr:hover{background:rgba(255,255,255,0.025);}
+tbody tr:last-child td{border-bottom:none;}
+.row-actions{display:flex;gap:6px;}
+.cell-strong{font-weight:600;}
+.cell-dim{color:var(--ink-2);}
+
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;}
+.filter-pill{
+  padding:7px 13px;border-radius:100px;font-size:12px;font-weight:600;
+  border:1px solid var(--glass-brd);background:var(--glass);color:var(--ink-2);
+  transition:all .18s var(--ease);
+}
+.filter-pill.active{background:var(--grad-brand);color:#04140f;border-color:transparent;}
+.spacer{flex:1;}
+
+/* modals */
+.overlay{
+  position:fixed;inset:0;background:rgba(3,6,9,0.72);backdrop-filter:blur(4px);
+  display:none;align-items:center;justify-content:center;z-index:100;padding:20px;
+}
+.overlay.open{display:flex;animation:fadeIn .2s var(--ease);}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.modal{
+  width:100%;max-width:520px;max-height:88vh;overflow-y:auto;
+  background:var(--bg-panel-2);border:1px solid var(--glass-brd);
+  border-radius:18px;box-shadow:var(--shadow-lg);
+  animation:modalIn .25s var(--ease);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:translateY(0) scale(1);}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.modal-head h3{font-size:16px;}
+.modal-body{padding:22px;}
+.modal-foot{padding:16px 22px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:flex-end;gap:10px;}
+.field{margin-bottom:15px;}
+.field label{display:block;font-size:12px;color:var(--ink-2);margin-bottom:6px;font-weight:600;}
+.field input,.field select,.field textarea{
+  width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--glass-brd);
+  background:rgba(255,255,255,0.03);color:var(--ink-1);font-size:13.5px;font-family:inherit;outline:none;
+  transition:border-color .18s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);}
+.field textarea{resize:vertical;min-height:70px;}
+.confirm-modal .modal-body{text-align:center;padding:30px 26px;}
+.confirm-icon{width:52px;height:52px;border-radius:50%;background:rgba(242,99,122,0.12);color:var(--rose);display:grid;place-items:center;margin:0 auto 16px;}
+
+/* dark dropdown list (fixes white options in the Log Alert form) */
+.field select,.field input,.field textarea{color-scheme:dark;}
+.field select option{background:#121b25;color:#eef4f2;}
+.field select option:checked,.field select option:hover{background:#1c9c80;color:#04140f;}

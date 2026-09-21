@@ -1,0 +1,17 @@
+/* insights-extras.css — small additions used by the 4 insights pages.
+   The main design comes from the friend's css/dashboard.css (same tokens/classes). */
+/* circular gauge (SVG ring + centered text) */
+.ring-wrap{position:relative;width:var(--ring-size,140px);height:var(--ring-size,140px);margin:0 auto;}
+.ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg);}
+.ring-track{fill:none;stroke:rgba(255,255,255,0.07);stroke-width:9;}
+.ring-fill{fill:none;stroke:var(--ring-color,var(--teal));stroke-width:9;stroke-linecap:round;
+  stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.1s var(--ease),stroke .3s;}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.ring-center .num{font-family:'Space Grotesk';font-weight:700;font-size:24px;}
+.ring-center .lbl{font-size:11px;letter-spacing:.06em;color:var(--ink-3);font-weight:600;margin-top:2px;}
+
+/* inline icons (filled by common.js from data-icon="name") */
+.ico{display:inline-flex;width:var(--s,16px);height:var(--s,16px);flex-shrink:0;}
+.ico svg{width:100%;height:100%;}
+
+.empty-state{padding:50px 20px;text-align:center;color:var(--ink-3);font-size:13px;}
