@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Risk Prediction · Wellness Home Guardian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/insights-base.css">   <!-- works even without dashboard.css -->
+<link rel="stylesheet" href="../../css/dashboard.css">       <!-- friend's file: overrides with the same design -->
+<link rel="stylesheet" href="../../css/insights-extras.css">
+<link rel="stylesheet" href="../../css/risk-prediction.css">
+</head>
+<body data-page="riskpred"
+      data-title="Health Risk Prediction"
+      data-sub="Simulated environmental health-risk model — not a medical diagnosis">
+
+<!-- Sidebar + topbar are injected here by js/common.js -->
+<main class="content">
+
+  <div class="view-head">
+    <div>
+      <h2>Health Risk Prediction</h2>
+      <div class="section-sub">Demo environmental risk prediction — not a medical diagnosis.</div>
+    </div>
+  </div>
+
+  <div class="grid g-1-2">
+
+    <!-- ===== Model inputs (What-If simulator) ===== -->
+    <div class="card">
+      <div class="section-title" style="font-size:15px;margin-bottom:16px;">Model Inputs</div>
+
+      <div class="slider-row">
+        <div class="bar-head"><span>Temperature (°C)</span><b id="val-temp">25.4</b></div>
+        <input type="range" data-key="temp" min="18" max="35" step="0.1" value="25.4">
+      </div>
+      <div class="slider-row">
+        <div class="bar-head"><span>Humidity (%)</span><b id="val-hum">54</b></div>
+        <input type="range" data-key="hum" min="20" max="90" step="1" value="54">
+      </div>
+      <div class="slider-row">
+        <div class="bar-head"><span>PM2.5 (µg/m³)</span><b id="val-pm25">18</b></div>
+        <input type="range" data-key="pm25" min="0" max="120" step="1" value="18">
+      </div>
+      <div class="slider-row">
+        <div class="bar-head"><span>CO2 (ppm)</span><b id="val-co2">680</b></div>
+        <input type="range" data-key="co2" min="400" max="3000" step="10" value="680">
+      </div>
+      <div class="slider-row">
+        <div class="bar-head"><span>VOC (ppm)</span><b id="val-voc">0.42</b></div>
+        <input type="range" data-key="voc" min="0" max="2" step="0.01" value="0.42">
+      </div>
+
+      <button class="btn btn-primary" id="predictBtn" style="width:100%;justify-content:center;margin-top:6px;">
+        <span data-icon="pulse" data-size="15"></span> Predict Risk
+      </button>
+      <p style="font-size:11px;color:var(--ink-3);margin-top:14px;line-height:1.6;">
+        Move the sliders to run the <b>What-If Simulator</b> — the prediction updates instantly from simulated logic; no server call is made.
+      </p>
+    </div>
+
+    <!-- ===== Predicted result ===== -->
+    <div class="card" id="riskResultCard">
+      <div class="section-title" style="font-size:15px;margin-bottom:16px;">Predicted Result</div>
+
+      <div class="ring-wrap" style="--ring-size:140px;">
+        <svg viewBox="0 0 100 100">
+          <circle class="ring-track" cx="50" cy="50" r="44"/>
+          <circle class="ring-fill" id="riskRing" cx="50" cy="50" r="44" pathLength="100"/>
+        </svg>
+        <div class="ring-center">
+          <div class="num" id="riskPct">0%</div>
+          <div class="lbl">RISK LEVEL</div>
+        </div>
+      </div>
+
+      <div class="risk-level-row" id="riskBadge"></div>
+
+      <div class="bar-row">
+        <div class="bar-head"><span>Predicted Environmental Risk</span><b id="riskLabel">—</b></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span>Confidence</span><b id="riskConf">—</b></div>
+        <div class="bar-track"><div class="bar-fill" id="riskConfBar"></div></div>
+      </div>
+
+      <div class="ai-card risk-note">
+        <p id="riskNote">Run a prediction to see results.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="../../js/insights/insights-common.js"></script>
+<script src="../../js/insights/risk-prediction.js"></script>
+</body>
+</html>

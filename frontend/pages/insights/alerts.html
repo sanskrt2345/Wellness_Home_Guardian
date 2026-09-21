@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerts · Wellness Home Guardian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/insights-base.css">   <!-- works even without dashboard.css -->
+<link rel="stylesheet" href="../../css/dashboard.css">       <!-- friend's file: overrides with the same design -->
+<link rel="stylesheet" href="../../css/insights-extras.css">
+<link rel="stylesheet" href="../../css/alerts.css">
+</head>
+<body data-page="alerts"
+      data-title="Alerts"
+      data-sub="Active and historical environmental alerts">
+
+<!-- Sidebar + topbar are injected here by js/common.js -->
+<main class="content">
+
+  <div class="view-head">
+    <div>
+      <h2>Alert Management</h2>
+      <div class="section-sub">Active and historical environmental alerts</div>
+    </div>
+    <button class="btn btn-primary" id="logAlertBtn"><span data-icon="plus" data-size="15"></span> Log Alert</button>
+  </div>
+
+  <!-- filters -->
+  <div class="toolbar" id="alertFilters">
+    <button class="filter-pill active" data-f="All">All</button>
+    <button class="filter-pill" data-f="Critical">Critical</button>
+    <button class="filter-pill" data-f="High">High</button>
+    <button class="filter-pill" data-f="Medium">Medium</button>
+    <button class="filter-pill" data-f="Low">Low</button>
+    <button class="filter-pill" data-f="Resolved">Resolved</button>
+  </div>
+
+  <!-- table (rows are rendered by js/alerts.js) -->
+  <div class="card-flat table-scroll">
+    <table>
+      <thead><tr>
+        <th>Alert ID</th><th>Sensor</th><th>Severity</th><th>Message</th><th>Time</th><th>Status</th><th></th>
+      </tr></thead>
+      <tbody id="alertsTbody"></tbody>
+    </table>
+  </div>
+</main>
+
+<!-- ===== Add-alert modal ===== -->
+<div class="overlay" id="formOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Log Alert</h3>
+      <button class="icon-btn" id="formCloseBtn" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label>Sensor *</label>
+        <select id="fSensor"><option value="">Select Sensor</option>
+          <option>CO2</option><option>PM2.5</option><option>Humidity</option><option>VOC</option><option>Temperature</option><option>Noise</option></select></div>
+      <div class="field"><label>Severity *</label>
+        <select id="fSeverity"><option value="">Select Severity</option>
+          <option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select></div>
+      <div class="field"><label>Message *</label><textarea id="fMessage"></textarea></div>
+      <div class="field"><label>Time *</label><input type="text" id="fTime" placeholder="e.g. 10:42 AM"></div>
+      <div class="field"><label>Status *</label>
+        <select id="fStatus"><option>Active</option><option>Acknowledged</option><option>Resolved</option></select></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" id="formCancelBtn">Cancel</button>
+      <button class="btn btn-primary" id="formSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Confirm-delete modal ===== -->
+<div class="overlay" id="confirmOverlay">
+  <div class="modal confirm-modal" style="max-width:380px;">
+    <div class="modal-body">
+      <div class="confirm-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6h16z"/></svg></div>
+      <h3 style="margin-bottom:8px;">Delete this alert?</h3>
+      <p style="font-size:13px;color:var(--ink-2);" id="confirmText">This action cannot be undone.</p>
+    </div>
+    <div class="modal-foot" style="justify-content:center;">
+      <button class="btn" id="confirmCancelBtn">Cancel</button>
+      <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/insights/insights-common.js"></script>
+<script src="../../js/insights/alerts.js"></script>
+</body>
+</html>

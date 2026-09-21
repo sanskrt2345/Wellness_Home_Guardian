@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommendations · Wellness Home Guardian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/insights-base.css">   <!-- works even without dashboard.css -->
+<link rel="stylesheet" href="../../css/dashboard.css">       <!-- friend's file: overrides with the same design -->
+<link rel="stylesheet" href="../../css/insights-extras.css">
+<link rel="stylesheet" href="../../css/recommendations.css">
+</head>
+<body data-page="recommendations"
+      data-title="Recommendations"
+      data-sub="AI-generated action suggestions">
+
+<!-- Sidebar + topbar are injected here by js/common.js -->
+<main class="content">
+
+  <div class="view-head">
+    <div>
+      <h2>Recommendations</h2>
+      <div class="section-sub">AI-generated suggestions based on current simulated conditions</div>
+    </div>
+  </div>
+
+  <div class="grid g2" id="recGrid">
+
+    <div class="card rec-card" data-title="Open Windows">
+      <div class="rec-ic"><span data-icon="air" data-size="20"></span></div>
+      <div style="flex:1;">
+        <h4>Open Windows</h4>
+        <p>CO2 is gradually increasing in the Living Room.</p>
+        <div class="rec-foot">
+          <span class="badge badge-warn"><span class="dot"></span>Medium</span>
+          <button class="btn btn-sm btn-primary" data-action="ack"><span data-icon="check" data-size="13"></span> Acknowledge</button>
+          <button class="btn btn-sm" data-action="dismiss">Dismiss</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rec-card" data-title="Replace HVAC Filter">
+      <div class="rec-ic"><span data-icon="wrench" data-size="20"></span></div>
+      <div style="flex:1;">
+        <h4>Replace HVAC Filter</h4>
+        <p>Filter maintenance is approaching for Green Residency.</p>
+        <div class="rec-foot">
+          <span class="badge badge-bad"><span class="dot"></span>High</span>
+          <button class="btn btn-sm btn-primary" data-action="ack"><span data-icon="check" data-size="13"></span> Acknowledge</button>
+          <button class="btn btn-sm" data-action="dismiss">Dismiss</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rec-card" data-title="Increase Ventilation">
+      <div class="rec-ic"><span data-icon="zap" data-size="20"></span></div>
+      <div style="flex:1;">
+        <h4>Increase Ventilation</h4>
+        <p>Indoor CO2 can be reduced through better airflow.</p>
+        <div class="rec-foot">
+          <span class="badge badge-warn"><span class="dot"></span>Medium</span>
+          <button class="btn btn-sm btn-primary" data-action="ack"><span data-icon="check" data-size="13"></span> Acknowledge</button>
+          <button class="btn btn-sm" data-action="dismiss">Dismiss</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rec-card" data-title="Run Air Purifier">
+      <div class="rec-ic"><span data-icon="leaf" data-size="20"></span></div>
+      <div style="flex:1;">
+        <h4>Run Air Purifier</h4>
+        <p>PM2.5 levels are slightly elevated in the Bedroom.</p>
+        <div class="rec-foot">
+          <span class="badge badge-neutral"><span class="dot"></span>Low</span>
+          <button class="btn btn-sm btn-primary" data-action="ack"><span data-icon="check" data-size="13"></span> Acknowledge</button>
+          <button class="btn btn-sm" data-action="dismiss">Dismiss</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="empty-state" id="recEmpty" style="display:none;">All recommendations resolved.</div>
+</main>
+
+<script src="../../js/insights/insights-common.js"></script>
+<script src="../../js/insights/recommendations.js"></script>
+</body>
+</html>

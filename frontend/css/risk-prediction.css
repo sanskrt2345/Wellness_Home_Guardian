@@ -1,0 +1,25 @@
+/* risk-prediction.css — Health Risk Prediction section only */
+/* AI insight card */
+.ai-card{
+  border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(46,230,184,0.09),rgba(55,201,232,0.03));
+  border:1px solid rgba(46,230,184,0.25);
+}
+.ai-card .ai-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.ai-orb{width:32px;height:32px;border-radius:9px;background:var(--grad-brand);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 20px rgba(46,230,184,.5);}
+.ai-card p{font-size:13.5px;color:var(--ink-1);line-height:1.6;}
+
+/* what-if slider */
+.slider-row{margin-bottom:18px;}
+.slider-row .bar-head{margin-bottom:9px;}
+input[type=range]{
+  -webkit-appearance:none;width:100%;height:5px;border-radius:100px;
+  background:rgba(255,255,255,0.08);outline:none;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:17px;height:17px;border-radius:50%;
+  background:var(--grad-brand);cursor:pointer;box-shadow:0 0 0 4px rgba(46,230,184,.15);
+}
+
+.risk-level-row{text-align:center;margin:14px 0;}
+.risk-note{margin-top:16px;}
