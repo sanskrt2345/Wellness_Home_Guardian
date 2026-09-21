@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time-Series Data · Wellness Home Guardian</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/time-series.css" />
+</head>
+
+<body
+  data-page="time-series"
+  data-title="Time-Series Data"
+  data-subtitle="Explore historical simulated sensor readings">
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <div class="content">
+      <header class="topbar" id="topbar"></header>
+
+      <main class="page">
+        <!-- Heading + Export -->
+        <div class="page-head">
+          <div>
+            <h1>Time-Series Data Explorer</h1>
+            <p class="page-sub">Browse simulated historical sensor readings</p>
+          </div>
+          <button class="btn-outline" id="exportBtn">
+            <i data-lucide="download"></i>Export CSV
+          </button>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <select class="select" id="metricSelect" aria-label="Metric">
+            <option value="temperature">Temperature</option>
+            <option value="humidity">Humidity</option>
+            <option value="co2">CO2</option>
+            <option value="pm25">PM2.5</option>
+          </select>
+
+          <select class="select" id="sensorSelect" aria-label="Sensor"></select>
+
+          <div class="search-box search-filter">
+            <i data-lucide="search"></i>
+            <input type="text" id="timeFilter" placeholder="Filter time…" autocomplete="off" />
+          </div>
+
+          <button class="btn-outline sm spacer" id="refreshBtn">Refresh Window</button>
+        </div>
+
+        <!-- Chart -->
+        <section class="card chart-card">
+          <div class="chart-box">
+            <canvas id="tsChart" aria-label="Sensor reading chart" role="img"></canvas>
+            <div class="chart-fallback" id="chartFallback" hidden>Chart.js unavailable — preview fallback</div>
+          </div>
+        </section>
+
+        <!-- Table -->
+        <section class="card table-card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th data-metric="temperature">Temperature (°C)</th>
+                  <th data-metric="humidity">Humidity (%)</th>
+                  <th data-metric="co2">CO2 (ppm)</th>
+                  <th data-metric="pm25">PM2.5 (µg/m³)</th>
+                </tr>
+              </thead>
+              <tbody id="readingRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Icons (Lucide) + Charts (Chart.js) -->
+  <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Shared layout first, then this page's script -->
+  <script src="js/layout.js"></script>
+  <script src="js/time-series.js"></script>
+</body>
+</html>

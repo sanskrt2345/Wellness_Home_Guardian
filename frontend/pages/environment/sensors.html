@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensors · Wellness Home Guardian</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sensors.css" />
+</head>
+
+<body
+  data-page="sensors"
+  data-title="Sensors"
+  data-subtitle="IoT sensor fleet — simulated frontend devices">
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <div class="content">
+      <header class="topbar" id="topbar"></header>
+
+      <main class="page">
+        <!-- Heading + Add button -->
+        <div class="page-head">
+          <div>
+            <h1>Sensors</h1>
+            <p class="page-sub">Simulated frontend sensor fleet — no real hardware is connected</p>
+          </div>
+          <button class="btn-primary" id="addSensorBtn">
+            <i data-lucide="plus"></i>Add Sensor
+          </button>
+        </div>
+
+        <!-- Connectivity banner -->
+        <div class="banner">
+          <span class="dot"></span>
+          <span id="connectivityText">Sensor Connectivity — 6/6 online (simulated)</span>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box search-page">
+          <i data-lucide="search"></i>
+          <input type="text" id="searchSensors" placeholder="Search sensors…" autocomplete="off" />
+        </div>
+
+        <!-- Table -->
+        <section class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Sensor ID</th>
+                  <th>Type</th>
+                  <th>Home</th>
+                  <th>Room</th>
+                  <th>Installed</th>
+                  <th>Current Reading</th>
+                  <th>Status</th>
+                  <th><span class="sr-only">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody id="sensorRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Add / Edit / View popup -->
+  <div class="modal" id="modal" hidden>
+    <form class="modal-card" id="sensorForm">
+      <div class="modal-head">
+        <h3 id="modalTitle">Add sensor</h3>
+        <button type="button" class="icon-btn" id="modalClose" aria-label="Close"><i data-lucide="x"></i></button>
+      </div>
+
+      <div class="form-grid">
+        <label>Sensor type
+          <select id="fType"></select>
+        </label>
+        <label>Status
+          <select id="fStatus">
+            <option>Healthy</option>
+            <option>Maintenance Due</option>
+            <option>Offline</option>
+          </select>
+        </label>
+        <label>Home
+          <input id="fHome" required placeholder="e.g. Green Residency" />
+        </label>
+        <label>Room
+          <input id="fRoom" required placeholder="e.g. Living Room" />
+        </label>
+        <label class="span-2">Installed on
+          <input id="fDate" type="date" required />
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="modalCancel">Cancel</button>
+        <button type="submit" class="btn-primary" id="modalSave">Save sensor</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Icons (Lucide) -->
+  <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+  <!-- Shared layout first, then this page's script -->
+  <script src="js/layout.js"></script>
+  <script src="js/sensors.js"></script>
+</body>
+</html>

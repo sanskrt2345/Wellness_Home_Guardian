@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indoor Air Quality · Wellness Home Guardian</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/indoor-air-quality.css" />
+</head>
+
+<body
+  data-page="indoor-air-quality"
+  data-title="Indoor Air Quality"
+  data-subtitle="Pollutant levels and air quality index">
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <div class="content">
+      <header class="topbar" id="topbar"></header>
+
+      <main class="page">
+        <!-- Heading -->
+        <div class="page-head">
+          <h1>Indoor Air Quality</h1>
+          <p class="page-sub">Pollutant concentrations and overall Air Quality Index (simulated)</p>
+        </div>
+
+        <!-- 4 pollutant cards -->
+        <section class="grid grid-4 kpi-row">
+          <article class="panel kpi">
+            <div class="kpi-label">PM2.5</div>
+            <div class="kpi-value" id="kpiPm25">18 µg/m³</div>
+            <span class="pill pill-ok" id="kpiPm25Pill"></span>
+          </article>
+          <article class="panel kpi">
+            <div class="kpi-label">PM10</div>
+            <div class="kpi-value" id="kpiPm10">31 µg/m³</div>
+            <span class="pill pill-ok" id="kpiPm10Pill"></span>
+          </article>
+          <article class="panel kpi">
+            <div class="kpi-label">CO2</div>
+            <div class="kpi-value" id="kpiCo2">680 ppm</div>
+            <span class="pill pill-neutral" id="kpiCo2Pill"></span>
+          </article>
+          <article class="panel kpi">
+            <div class="kpi-label">VOC</div>
+            <div class="kpi-value" id="kpiVoc">0.42 ppm</div>
+            <span class="pill pill-neutral" id="kpiVocPill"></span>
+          </article>
+        </section>
+
+        <!-- Trend + Gauge -->
+        <section class="grid grid-2-1 row">
+          <article class="panel">
+            <h2 class="panel-title">Air Quality Trend</h2>
+            <div class="chart-box trend-box">
+              <canvas id="trendChart" aria-label="Air quality index over time" role="img"></canvas>
+              <div class="chart-fallback" id="trendFallback" hidden>Chart.js unavailable — preview fallback</div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2 class="panel-title">AQI Gauge</h2>
+            <div class="gauge">
+              <svg viewBox="0 0 160 160" aria-hidden="true">
+                <circle class="gauge-track" cx="80" cy="80" r="68" />
+                <circle class="gauge-arc" id="gaugeArc" cx="80" cy="80" r="68" transform="rotate(-90 80 80)" />
+              </svg>
+              <div class="gauge-center">
+                <strong id="aqiValue">42</strong>
+                <span>AQI</span>
+              </div>
+            </div>
+            <div class="status-bar ok" id="aqiStatus">Good — safe for all occupants</div>
+            <p class="legend-note">AQI 0–50 Good · 51–100 Moderate · 101–150 Poor · 150+ Critical</p>
+          </article>
+        </section>
+
+        <!-- Distribution + Rooms -->
+        <section class="grid grid-1-2 row">
+          <article class="panel">
+            <h2 class="panel-title">Pollutant Distribution</h2>
+            <div class="donut-area">
+              <div class="donut-box">
+                <canvas id="donutChart" aria-label="Pollutant distribution" role="img"></canvas>
+              </div>
+              <ul class="legend" id="donutLegend"></ul>
+              <div class="chart-fallback" id="donutFallback" hidden>Chart.js unavailable — preview fallback</div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2 class="panel-title">Room-Wise Air Quality</h2>
+            <div class="room-grid" id="roomGrid"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Icons (Lucide) + Charts (Chart.js) -->
+  <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Shared layout first, then this page's script -->
+  <script src="js/layout.js"></script>
+  <script src="js/indoor-air-quality.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* =====================================================
+   time-series.css  —  ONLY for time-series.html
+   ===================================================== */
+
+/* Topbar stays visible while the long table scrolls */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(6, 11, 10, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.page { padding: 32px 30px 40px; }
+
+/* ---------- Page heading ---------- */
+.page-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.page-head h1 { font-size: 22px; font-weight: 700; line-height: 28px; letter-spacing: -0.01em; }
+.page-sub { margin-top: 6px; font-size: 13px; color: var(--text-2); }
+
+/* ---------- Outline button (Export / Refresh) ---------- */
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  height: 40px; padding: 0 20px; border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text); font-size: 13.5px; font-weight: 600; white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-outline:hover { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.2); }
+.btn-outline svg { width: 16px; height: 16px; }
+.btn-outline.sm { height: 36px; padding: 0 16px; }
+
+/* ---------- Controls row ---------- */
+.controls {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+  margin-top: 26px;
+}
+.controls .spacer { margin-left: auto; }
+
+.select {
+  height: 38px; padding: 0 12px; border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035); border: 1px solid var(--border);
+  color: var(--text); font: inherit; font-size: 14px;
+  color-scheme: dark; cursor: pointer;
+}
+#metricSelect { width: 192px; }
+#sensorSelect { width: 182px; }
+.search-filter { width: 214px; }
+
+/* ---------- Cards ---------- */
+.card {
+  margin-top: 26px;
+  border-radius: 24px;
+  background: var(--card); border: 1px solid var(--border);
+}
+.chart-card { padding: 24px; }
+.chart-box { position: relative; height: 300px; }
+.chart-fallback {
+  height: 100%; display: grid; place-items: center;
+  color: var(--muted); font-size: 14px;
+}
+
+.table-card { margin-top: 22px; padding: 8px 22px 16px; }
+.table-wrap { overflow-x: auto; }
+
+/* ---------- Table ---------- */
+.table { width: 100%; min-width: 640px; border-collapse: collapse; table-layout: fixed; }
+.table th:nth-child(1) { width: 13.5%; }
+.table th:nth-child(2) { width: 25.4%; }
+.table th:nth-child(3) { width: 20.8%; }
+.table th:nth-child(4) { width: 17.9%; }
+
+.table th {
+  height: 40px; padding: 0 16px; text-align: left; white-space: nowrap;
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; color: #6e7c78;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.15s;
+}
+.table th.is-active { color: var(--text); }
+
+.table td {
+  height: 48px; padding: 0 16px;
+  font-size: 14px; color: var(--text);
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--border-soft);
+}
+.table tbody tr:last-child td { border-bottom: 0; }
+.table tbody tr:hover td { background: rgba(255, 255, 255, 0.03); }
+.table .time { font-family: var(--mono); }
+.table .empty { height: 90px; text-align: center; color: var(--muted); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 700px) {
+  .page-head { flex-direction: column; align-items: flex-start; }
+  .controls .spacer { margin-left: 0; }
+}
