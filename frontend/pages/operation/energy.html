@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Energy Monitoring — Wellness Home Guardian</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+<link rel="stylesheet" href="../css/energy.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06201c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5z"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+      </div>
+      <div class="brand-name">Wellness Home<br>Guardian</div>
+    </div>
+
+    <nav class="nav-scroll">
+      <div class="nav-section">
+        <div class="nav-label">Overview</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Home Management</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>Home Registry</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Occupants</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Rooms</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Environment</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-8.49a6 6 0 0 0 0 8.49M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Sensors</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Time-Series Data</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>Indoor Air Quality</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">AI Intelligence</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2-6 4 12 2-6h8"/></svg>LSTM Anomaly Detection</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health Risk Prediction</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Wellness</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Wellness Scores</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>Recommendations</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Operations</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Alerts</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></svg>Maintenance</a>
+        <a class="nav-item active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>Energy Monitoring</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Audit Trail</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Analytics</div>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>Analytics</a>
+        <a class="nav-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/></svg>SDG Impact</a>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Live Simulation</span>
+      <button class="toggle" id="liveToggle" role="switch" aria-checked="false" aria-label="Toggle live simulation">
+        <span class="toggle-knob"></span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <div class="main-col">
+    <header class="topbar">
+      <div class="page-title-block">
+        <h1>Energy Monitoring</h1>
+        <p>Consumption and efficiency across connected devices</p>
+      </div>
+
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search homes, sensors, occupants&hellip;</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="demo-pill"><span class="dot"></span>Demo Data</div>
+        <button class="icon-btn" aria-label="Notifications">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge">4</span>
+        </button>
+        <div class="profile">
+          <div class="avatar">RA</div>
+          <div class="profile-text">
+            <div class="name">Riya Admin</div>
+            <div class="role">Facility Owner</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+
+        <!-- HEADER ROW -->
+        <div class="page-head">
+          <div>
+            <h1>Energy Monitoring</h1>
+            <p>Consumption and efficiency across connected devices</p>
+          </div>
+
+          <div class="head-actions">
+            <select class="range" id="rangeSelect">
+              <option value="7">Last 7 days</option>
+              <option value="30" selected>Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="365">Last year</option>
+            </select>
+
+            <button class="primary" id="refreshBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 1 1-2.6-6.36"></path>
+                <path d="M21 4v6h-6"></path>
+              </svg>
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- STAT CARDS -->
+        <div class="stat-row">
+
+          <div class="stat">
+            <div class="top-row">
+              <div class="label">Total energy</div>
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="value">654 kWh</div>
+            <div class="delta down">↓ 4.2% vs last period</div>
+          </div>
+
+          <div class="stat">
+            <div class="top-row">
+              <div class="label">Efficiency</div>
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3 3"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="value">88%</div>
+            <div class="delta up">↑ 2 pts vs last period</div>
+          </div>
+
+          <div class="stat">
+            <div class="top-row">
+              <div class="label">Estimated savings</div>
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20"></path>
+                  <path d="M17 7c0-2.2-2.2-4-5-4s-5 1.8-5 4 2.2 3.2 5 4 5 1.8 5 4-2.2 4-5 4-5-1.8-5-4"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="value">₹1,240/mo</div>
+            <div class="delta up">↑ ₹180 vs last period</div>
+          </div>
+
+          <div class="stat">
+            <div class="top-row">
+              <div class="label">Connected devices</div>
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+                  <path d="M9 9h6v6H9z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="value">4</div>
+            <div class="delta">All reporting</div>
+          </div>
+
+        </div>
+
+        <!-- CHARTS -->
+        <div class="panel-grid">
+
+          <div class="panel">
+            <h2>Monthly energy trend</h2>
+            <p class="sub">kWh consumed per month</p>
+            <div class="chart-wrap">
+              <canvas id="chartTrend"></canvas>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Energy by device</h2>
+            <p class="sub">Share of total draw</p>
+            <div class="chart-wrap">
+              <canvas id="chartDevices"></canvas>
+            </div>
+            <div class="device-list" id="deviceList"></div>
+          </div>
+
+        </div>
+
+        <footer class="credit">
+          Wellness Home Guardian · demo data shown throughout
+        </footer>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../javascript/energy.js"></script>
+</body>
+</html>
