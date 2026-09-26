@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+<title>SDG Impact — Wellness Home Guardian</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="../css/sdg.css">
+
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M12 3L19 6V11.5C19 16 16 19.5 12 21C8 19.5 5 16 5 11.5V6L12 3Z"
+                    stroke="#06201c"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                />
+                <path
+                    d="M8.5 11.5L11 14L15.5 9"
+                    stroke="#06201c"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </div>
+
+        <div class="brand-name">
+            <span>Wellness Home</span>
+            <span>Guardian</span>
+        </div>
+
+    </div>
+
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+        <!-- OVERVIEW -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                Overview
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="dashboard"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                </svg>
+
+                Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- HOME MANAGEMENT -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                Home Management
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="registry"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M3 11l9-7 9 7"/>
+                    <path d="M5 10v9a1 1 0 001 1h12a1 1 0 001-1v-9"/>
+                </svg>
+
+                Home Registry
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="occupants"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/>
+                    <circle cx="10" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 00-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+
+                Occupants
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="rooms"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="3" y="4" width="18" height="16" rx="1.5"/>
+                    <path d="M3 10h18"/>
+                    <path d="M11 10v10"/>
+                </svg>
+
+                Rooms
+            </a>
+
+        </div>
+
+
+        <!-- ENVIRONMENT -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                Environment
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="sensors"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M8.5 15.5a5 5 0 017 0"/>
+                    <path d="M5.5 12.5a9 9 0 0113 0"/>
+                    <circle
+                        cx="12"
+                        cy="19"
+                        r="1.4"
+                        fill="currentColor"
+                        stroke="none"
+                    />
+                </svg>
+
+                Sensors
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="timeseries"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M4 19V5"/>
+                    <path d="M4 19h16"/>
+                    <path d="M8 15v2"/>
+                    <path d="M12 11v6"/>
+                    <path d="M16 7v10"/>
+                </svg>
+
+                Time-Series Data
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="air-quality"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <rect x="4" y="3" width="16" height="18" rx="1.5"/>
+                    <path d="M8 8h8"/>
+                    <path d="M8 12h8"/>
+                    <path d="M8 16h5"/>
+                </svg>
+
+                Indoor Air Quality
+            </a>
+
+        </div>
+
+
+        <!-- AI INTELLIGENCE -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                AI Intelligence
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="anomaly"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M3 12h4l2 7 4-14 2 7h6"/>
+                </svg>
+
+                LSTM Anomaly Detection
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="risk"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M3 13h3l2 6 4-16 2 10 2-4h5"/>
+                </svg>
+
+                Health Risk Prediction
+            </a>
+
+        </div>
+
+
+        <!-- WELLNESS -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                Wellness
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="scores"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M20.8 8.6c0 5.6-8.8 10.4-8.8 10.4S3.2 14.2 3.2 8.6a4.6 4.6 0 018.8-1.9 4.6 4.6 0 018.8 1.9z"/>
+                </svg>
+
+                Wellness Scores
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="recommendations"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/>
+                    <path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/>
+                </svg>
+
+                Recommendations
+            </a>
+
+        </div>
+
+
+        <!-- OPERATIONS -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                Operations
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="alerts"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.7 21a2 2 0 01-3.4 0"/>
+                </svg>
+
+                Alerts
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="maintenance"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2.7-.7-.7-2.7 2.6-2.6z"/>
+                </svg>
+
+                Maintenance
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="energy"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
+                </svg>
+
+                Energy Monitoring
+            </a>
+
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="audit"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M12 7v5l3.5 2"/>
+                </svg>
+
+                Audit Trail
+            </a>
+
+        </div>
+
+
+        <!-- ANALYTICS -->
+
+        <div class="nav-group">
+
+            <div class="nav-group-label">
+                Analytics
+            </div>
+
+            <a
+                class="nav-link"
+                href="#"
+                data-nav="analytics"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M4 19V5"/>
+                    <path d="M4 19h16"/>
+                    <path d="M6 15l4-4 3 3 5-6"/>
+                </svg>
+
+                Analytics
+            </a>
+
+
+            <a
+                class="nav-link active"
+                href="#"
+                data-nav="sdg-impact"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3a14 14 0 010 18"/>
+                    <path d="M12 3a14 14 0 000 18"/>
+                </svg>
+
+                SDG Impact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- SIDEBAR FOOTER -->
+
+    <div class="sidebar-footer">
+
+        <span class="label">
+            Live Simulation
+        </span>
+
+        <button
+            type="button"
+            class="switch"
+            id="simSwitch"
+            aria-pressed="false"
+            aria-label="Toggle live simulation"
+        >
+            <span class="knob"></span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =====================================================
+     CONTENT
+===================================================== -->
+
+<div class="content">
+
+
+    <!-- =================================================
+         TOP HEADER
+    ================================================= -->
+
+    <header class="top">
+
+        <button
+            type="button"
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open menu"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+            >
+                <path d="M3 6h18"/>
+                <path d="M3 12h18"/>
+                <path d="M3 18h18"/>
+            </svg>
+        </button>
+
+
+        <!-- PAGE TITLE NEXT TO SEARCH -->
+
+        <div class="top-page-title">
+
+            <div class="top-page-title-main">
+                SDG Impact
+            </div>
+
+            <div class="top-page-title-sub">
+                Alignment with UN Sustainable Development Goals
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <circle
+                    cx="11"
+                    cy="11"
+                    r="7"
+                />
+
+                <path d="M21 21l-4.3-4.3"/>
+            </svg>
+
+            <span>
+                Search homes, sensors, occupants…
+            </span>
+
+        </div>
+
+
+        <!-- HEADER RIGHT -->
+
+        <div class="top-right">
+
+
+            <div class="demo-pill">
+
+                <i></i>
+
+                Demo Data
+
+            </div>
+
+
+            <div class="icon-btn">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.7 21a2 2 0 01-3.4 0"/>
+                </svg>
+
+                <span class="badge">
+                    4
+                </span>
+
+            </div>
+
+
+            <div class="avatar">
+                RA
+            </div>
+
+
+            <div class="user-info">
+
+                <span class="user-name">
+                    Riya Admin
+                </span>
+
+                <span class="user-role">
+                    Facility Owner
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================= -->
+
+    <main>
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-head">
+
+            <div>
+
+                <h1>
+                    SDG Impact
+                </h1>
+
+                <p>
+                    Alignment with UN Sustainable Development Goals
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SDG CARDS
+        ================================================= -->
+
+        <div class="sdg-grid">
+
+
+            <!-- SDG 3 -->
+
+            <div class="sdg-card">
+
+                <div class="sdg-badge">
+                    3
+                </div>
+
+                <h3>
+                    Good Health and Well-Being
+                </h3>
+
+                <p>
+                    Helps identify unhealthy indoor environmental
+                    conditions early, before they affect occupant health.
+                </p>
+
+                <div class="sdg-contribution">
+
+                    <span>
+                        Project Contribution
+                    </span>
+
+                    <span class="pct">
+                        78%
+                    </span>
+
+                </div>
+
+                <div class="sdg-bar">
+
+                    <div
+                        class="sdg-bar-fill"
+                        style="width: 78%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SDG 7 -->
+
+            <div class="sdg-card">
+
+                <div class="sdg-badge">
+                    7
+                </div>
+
+                <h3>
+                    Affordable and Clean Energy
+                </h3>
+
+                <p>
+                    Tracks energy consumption from HVAC,
+                    purifiers and other connected devices to guide efficiency.
+                </p>
+
+                <div class="sdg-contribution">
+
+                    <span>
+                        Project Contribution
+                    </span>
+
+                    <span class="pct">
+                        64%
+                    </span>
+
+                </div>
+
+                <div class="sdg-bar">
+
+                    <div
+                        class="sdg-bar-fill"
+                        style="width: 64%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SDG 9 -->
+
+            <div class="sdg-card">
+
+                <div class="sdg-badge">
+                    9
+                </div>
+
+                <h3>
+                    Industry, Innovation and Infrastructure
+                </h3>
+
+                <p>
+                    Demonstrates an AI + IoT reference architecture
+                    for smart, health-aware buildings.
+                </p>
+
+                <div class="sdg-contribution">
+
+                    <span>
+                        Project Contribution
+                    </span>
+
+                    <span class="pct">
+                        71%
+                    </span>
+
+                </div>
+
+                <div class="sdg-bar">
+
+                    <div
+                        class="sdg-bar-fill"
+                        style="width: 71%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SDG 11 -->
+
+            <div class="sdg-card">
+
+                <div class="sdg-badge">
+                    11
+                </div>
+
+                <h3>
+                    Sustainable Cities and Communities
+                </h3>
+
+                <p>
+                    Supports healthier indoor living environments
+                    as part of resilient, livable communities.
+                </p>
+
+                <div class="sdg-contribution">
+
+                    <span>
+                        Project Contribution
+                    </span>
+
+                    <span class="pct">
+                        58%
+                    </span>
+
+                </div>
+
+                <div class="sdg-bar">
+
+                    <div
+                        class="sdg-bar-fill"
+                        style="width: 58%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SDG 12 -->
+
+            <div class="sdg-card">
+
+                <div class="sdg-badge">
+                    12
+                </div>
+
+                <h3>
+                    Responsible Consumption and Production
+                </h3>
+
+                <p>
+                    Encourages data-driven, efficient use of energy
+                    and maintenance resources.
+                </p>
+
+                <div class="sdg-contribution">
+
+                    <span>
+                        Project Contribution
+                    </span>
+
+                    <span class="pct">
+                        66%
+                    </span>
+
+                </div>
+
+                <div class="sdg-bar">
+
+                    <div
+                        class="sdg-bar-fill"
+                        style="width: 66%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SDG 13 -->
+
+            <div class="sdg-card">
+
+                <div class="sdg-badge">
+                    13
+                </div>
+
+                <h3>
+                    Climate Action
+                </h3>
+
+                <p>
+                    Reduces unnecessary energy waste from indoor
+                    climate systems through informed automation.
+                </p>
+
+                <div class="sdg-contribution">
+
+                    <span>
+                        Project Contribution
+                    </span>
+
+                    <span class="pct">
+                        52%
+                    </span>
+
+                </div>
+
+                <div class="sdg-bar">
+
+                    <div
+                        class="sdg-bar-fill"
+                        style="width: 52%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+</div>
+
+<script src="../javascript/sdg.js"></script>
+
+</body>
+</html>
